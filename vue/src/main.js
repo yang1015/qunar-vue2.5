@@ -8,14 +8,19 @@ import '@styles/border.css'
 import '@styles/iconfont.css'
 
 import fastclick from 'fastclick'
-fastclick.attach(document.body)
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css'
 
+fastclick.attach(document.body)
+Vue.use(VueAwesomeSwiper)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
-  components: { App },
+  components: {
+    App
+  },
   template: '<App/>'
 })
