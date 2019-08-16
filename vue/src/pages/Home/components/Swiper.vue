@@ -12,6 +12,7 @@
 <script>
   export default {
     name: 'HomeSwiper',
+//    子组件使用data时 是一个函数
     data() {
       return {
         swiperOption: {
