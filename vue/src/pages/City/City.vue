@@ -1,12 +1,4 @@
 <template>
-<<<<<<< HEAD
-    <div>city</div>
-</template>
-
-<script>
-  export default {
-    name: "City",
-=======
   <div>
     <city-header></city-header>
     <city-search-box></city-search-box>
@@ -23,20 +15,14 @@
       CityHeader,
       CitySearchBox
     },
->>>>>>> origin/index-router
-    data() {
-      return {
 
-      }
+    data() {
+      return {}
     }
   }
 </script>
 
-<<<<<<< HEAD
 <style lang="stylus" scoped>
-=======
-<style>
 
->>>>>>> origin/index-router
 
 </style>
