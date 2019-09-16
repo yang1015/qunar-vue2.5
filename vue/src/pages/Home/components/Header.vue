@@ -7,33 +7,35 @@
       <span class="iconfont">&#xe632;</span>
       <input placeholder="请输入城市"/>
     </div>
-    <div class="header-right">{{city}}
-      <span class="iconfont">&#xe62d;</span>
-    </div>
+    <router-link to="/city">
+      <div class="header-right">88
+        <span class="iconfont">&#xe62d;</span>
+      </div>
+    </router-link>
+
   </div>
 </template>
 
 <script>
-export default {
-  name: 'Header',
-  props: {
-    city: String
-  },
-  methods: {
-    goBack () {
+  export default {
+    name: 'Header',
+    props: {
+      city: String
+    },
+    methods: {
+      goBack() {
+      }
     }
   }
-}
 </script>
 
 <style scoped lang='stylus'>
   @import '~@styles/variables.styl';
-
   .header
     display: flex
-    height: .86rem
     background: $bgColor
-    line-height .86rem
+    height: $headerHeight
+    line-height $headerHeight
     color #fff
     padding-left .1rem
     .header-left
@@ -58,4 +60,5 @@ export default {
     .header-right
       width: 1.24rem
       float: right
+      color #fff
 </style>
