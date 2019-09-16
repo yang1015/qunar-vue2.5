@@ -8,10 +8,18 @@
       <input placeholder="请输入城市"/>
     </div>
     <router-link to="/city">
+<<<<<<< HEAD:vue/src/pages/home/components/Header.vue
       <div class="header-right">888
         <span class="iconfont">&#xe62d;</span>
       </div>
     </router-link>
+=======
+      <div class="header-right">88
+        <span class="iconfont">&#xe62d;</span>
+      </div>
+    </router-link>
+
+>>>>>>> origin/index-router:vue/src/pages/Home/components/Header.vue
   </div>
 </template>
 
@@ -22,8 +30,12 @@
       city: String
     },
     methods: {
+<<<<<<< HEAD:vue/src/pages/home/components/Header.vue
       h() {
         console.log("22")
+=======
+      goBack() {
+>>>>>>> origin/index-router:vue/src/pages/Home/components/Header.vue
       }
     }
   }
@@ -31,12 +43,11 @@
 
 <style scoped lang='stylus'>
   @import '~@styles/variables.styl';
-
   .header
     display: flex
-    height: .86rem
     background: $bgColor
-    line-height .86rem
+    height: $headerHeight
+    line-height $headerHeight
     color #fff
     padding-left .1rem
     .header-left
@@ -61,4 +72,5 @@
     .header-right
       width: 1.24rem
       float: right
+      color #fff
 </style>

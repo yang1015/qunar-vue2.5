@@ -16,6 +16,11 @@ export default new Router({
       path: '/city',
       name: 'City',
       component: City
+<<<<<<< HEAD
     }
+=======
+    },
+
+>>>>>>> origin/index-router
   ]
 })
