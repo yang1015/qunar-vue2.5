@@ -1,6 +1,6 @@
 <template>
   <div class="search">
-      <input type="text" placeholder="请输入您想搜索的城市"/>
+      <input type="text" placeholder="请输入您想搜索的城市或拼音~~"/>
   </div>
 </template>
 
