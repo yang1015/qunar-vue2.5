@@ -1,29 +1,33 @@
 <template>
-  <div class="header">
-    <div class="header-left" @click="goBack">
-      <span class="iconfont">&#xe624;</span>
-    </div>
-    <div class="header-input">
-      <span class="iconfont">&#xe632;</span>
-      <input placeholder="请输入城市"/>
-    </div>
-    <div class="header-right">{{city}}
-      <span class="iconfont">&#xe62d;</span>
-    </div>
-  </div>
+  updated
+  <!--<div class="header">-->
+    <!--<div class="header-left">-->
+      <!--<span class="iconfont">&#xe624;</span>-->
+    <!--</div>-->
+    <!--<div class="header-input">-->
+      <!--<span class="iconfont">&#xe632;</span>-->
+      <!--<input placeholder="请输入城市"/>-->
+    <!--</div>-->
+    <!--<router-link to="/city">-->
+      <!--<div class="header-right">{{}}-->
+        <!--<span class="iconfont">&#xe62d;</span>-->
+      <!--</div>-->
+    <!--</router-link>-->
+  <!--</div>-->
 </template>
 
 <script>
-export default {
-  name: 'Header',
-  props: {
-    city: String
-  },
-  methods: {
-    goBack () {
+  export default {
+    name: 'Header',
+    props: {
+      city: String
+    },
+    methods: {
+      h() {
+        console.log("22")
+      }
     }
   }
-}
 </script>
 
 <style scoped lang='stylus'>
@@ -58,4 +62,5 @@ export default {
     .header-right
       width: 1.24rem
       float: right
+      border: 1px solid red
 </style>
