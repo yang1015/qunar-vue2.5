@@ -12,6 +12,9 @@
 <script>
   export default {
     name: 'HomeSwiper',
+    props: {
+      swiperList: Array
+    },
 //    子组件使用data时 是一个函数
     data() {
       return {
@@ -19,20 +22,7 @@
           pagination: '.swiper-pagination',
           loop: true
         },
-        swiperList: [
-          {
-            id: '0001',
-            imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/87a224d0349d94a11e97f31aa1aba4f5.jpg_750x200_1f78af87.jpg'
-          },
-          {
-            id: '0002',
-            imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20198/ffb06b600df4c655d10a1dfef4a8d0e9.jpg_750x200_7b1aec5e.jpg'
-          },
-          {
-            id: '0003',
-            imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/d7bbc21db442366a882e04ddc984669a.jpg_750x200_85e640d9.jpg'
-          }
-        ]
+
       }
     }
   }

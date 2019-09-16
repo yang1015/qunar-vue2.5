@@ -6,11 +6,19 @@ const path = require('path')
 
 module.exports = {
   dev: {
-
-    // Paths
+    // Paths webpack-dev-server提供的这个工具
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      // 转发机制
+      '/api': {
+        target: 'http://localhost:8081',
+        // 开发环境的转发
+        pathRewrite: {
+          '^/api': '/static/mock'
+        }
+      }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST

@@ -7,7 +7,7 @@
       <span class="iconfont">&#xe632;</span>
       <input placeholder="请输入城市"/>
     </div>
-    <div class="header-right">城市
+    <div class="header-right">{{city}}
       <span class="iconfont">&#xe62d;</span>
     </div>
   </div>
@@ -16,6 +16,9 @@
 <script>
 export default {
   name: 'Header',
+  props: {
+    city: String
+  },
   methods: {
     goBack () {
     }

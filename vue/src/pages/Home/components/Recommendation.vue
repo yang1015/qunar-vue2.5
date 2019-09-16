@@ -1,12 +1,9 @@
 <template>
   <div>
-    <div class='recommendation-title'>
-      热销推荐
-    </div>
-
+    <div class='recommendation-title'>热销推荐</div>
     <ul class="recommendation-list">
-      <li class='recommendation-item-wrapper' v-for = '(item, index) of recommendationList' :key="item.id">
-        <div class='recommendation-item' >
+      <li class='recommendation-item-wrapper' v-for='(item, index) of recommendList' :key="item.id">
+        <div class='recommendation-item'>
           <img class='recommendation-item-image' :src='item.imgUrl'/>
           <div class="recommendation-item-content">
             <p class="recommendation-item-title">{{item.title}}</p>
@@ -15,7 +12,7 @@
               id="start-from">起</span></p>
           </div>
         </div>
-        <div v-if='item.id !== recommendationList.length - 1' class='gray-border'/>
+        <div v-if='item.id !== recommendList.length - 1' class='gray-border'/>
       </li>
     </ul>
 
@@ -25,46 +22,8 @@
 <script>
   export default {
     name: 'HomeRecommendation',
-    data() {
-      return {
-        recommendationList: [
-          {
-            id: 0,
-            title: '宁波海洋世界',
-            desc: '浪漫首站，浪漫的海洋主题乐园',
-            priceStarsFrom: 99,
-            imgUrl: 'http://img1.qunarzz.com/sight/p0/201301/17/763b26f0e0b95c6493835fbb.jpg_200x200_26a1c82e.jpg'
-          },
-          {
-            id: 1,
-            title: '宁波海洋世界',
-            desc: '浪漫首站，浪漫的海洋主题乐园',
-            priceStarsFrom: 99,
-            imgUrl: 'http://img1.qunarzz.com/sight/p0/201301/17/763b26f0e0b95c6493835fbb.jpg_200x200_26a1c82e.jpg'
-          },
-          {
-            id: 2,
-            title: '宁波海洋世界',
-            desc: '浪漫首站，浪漫的海洋主题乐园',
-            priceStarsFrom: 99,
-            imgUrl: 'http://img1.qunarzz.com/sight/p0/201301/17/763b26f0e0b95c6493835fbb.jpg_200x200_26a1c82e.jpg'
-          },
-          {
-            id: 3,
-            title: '宁波海洋世界',
-            desc: '浪漫首站，浪漫的海洋主题乐园',
-            priceStarsFrom: 99,
-            imgUrl: 'http://img1.qunarzz.com/sight/p0/201301/17/763b26f0e0b95c6493835fbb.jpg_200x200_26a1c82e.jpg'
-          },
-          {
-            id: 4,
-            title: '宁波海洋世界',
-            desc: '浪漫首站，浪漫的海洋主题乐园',
-            priceStarsFrom: 99,
-            imgUrl: 'http://img1.qunarzz.com/sight/p0/201301/17/763b26f0e0b95c6493835fbb.jpg_200x200_26a1c82e.jpg'
-          }
-        ]
-      }
+    props: {
+      recommendList: Array
     }
   }
 </script>

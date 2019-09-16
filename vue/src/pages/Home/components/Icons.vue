@@ -6,7 +6,7 @@
           <div class='icon-img-container'>
             <img class='icon-img' :src="item.imgUrl"/>
           </div>
-          <p class="icon-text">{{item.text}}</p>
+          <p class="icon-text">{{item.desc}}</p>
         </div>
       </swiper-slide>
     </swiper>
@@ -16,58 +16,15 @@
 <script>
   export default {
     name: 'Icon',
+    props: {
+      iconList: Array
+    },
     data() { // 子组件的data必须是一个返回值
       return {
         swiperOption: {
 
         },
-        iconList: [
-          {
-            id: '0',
-            imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-            text: '景点门票景点门票'
-          },
-          {
-            id: '1',
-            imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/3e/86314b2af03b7502.png',
-            text: '名胜古迹'
-          },
-          {
-            id: '2',
-            imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png',
-            text: '自然风光'
-          },
-          {
-            id: '3',
-            imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-            text: '漂流'
-          },
-          {
-            id: '4',
-            imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/8c/47630407f70e8302.png',
-            text: '一日游'
-          },
-          {
-            id: '5',
-            imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/20/831d62d2e1c7be02.png',
-            text: '影视基地'
-          },
-          {
-            id: '6',
-            imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/75/eca3ce656c886502.png',
-            text: '景点门票'
-          },
-          {
-            id: '7',
-            imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/a40ee278d67000f2a29d2e20f6a029b3.png',
-            text: '宁波必游'
-          },
-          {
-            id: '8',
-            imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/20/831d62d2e1c7be02.png',
-            text: '水上玩乐'
-          }
-        ]
+
       }
     },
     computed: {
