@@ -1,6 +1,6 @@
 <template>
   <div class='icons-wrapper'>
-    <swiper :options="swiperOption">
+    <swiper :options="swiperOption" v-if = "showSwiper">
       <swiper-slide class="swiper-container" v-for="(page, index) of pages" :key = "index">
         <div class='icon-item-container' v-for = "item of page" :key = "item.id">
           <div class='icon-img-container'>
@@ -22,7 +22,7 @@
     data() { // 子组件的data必须是一个返回值
       return {
         swiperOption: {
-
+          autoPlay: false
         },
 
       }
@@ -36,6 +36,10 @@
           pages[pageIndex].push(item)
         })
         return pages;
+      },
+
+      showSwiper() {
+        return this.iconList.length? true : false;
       }
     },
     methods: {}

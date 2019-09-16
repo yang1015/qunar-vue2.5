@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <swiper :options="swiperOption">
+    <swiper :options="swiperOption" v-if = "showSwiper">
       <!--使用的是vue-awesome-swiper-->
       <swiper-slide v-for="item of swiperList" :key="item.id">
         <img class='swiper-img' :src='item.imgUrl'/>
@@ -21,8 +21,12 @@
         swiperOption: {
           pagination: '.swiper-pagination',
           loop: true
-        },
-
+        }
+      }
+    },
+    computed: {
+      showSwiper() {
+        if (this.swiperList.length) return true;
       }
     }
   }
@@ -35,7 +39,7 @@
     width 100%
     height 0
     overflow hidden
-    padding-bottom 26.67%
+    padding-bottom 30.67%
     background #eaeaea
     .swiper-img
       width 100%

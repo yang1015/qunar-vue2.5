@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="weekend-title">周末去哪儿游</div>
-    <ul>
+    <ul v-if="showSwiper">
       <li class="weekend-item" v-for ='(item, index) of weekendList' :key ='item.id'>
         <div class="weekend-image-wrapper">
           <img class="weekend-image" :src="item.imgUrl"/>
@@ -25,7 +25,11 @@
     data() {
       return {
       }
-    }
+    },
+    computed: {
+      showSwiper() {
+        return this.weekendList.length? true:false
+      }}
   }
 </script>
 

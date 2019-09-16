@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class='recommendation-title'>热销推荐</div>
-    <ul class="recommendation-list">
+    <ul class="recommendation-list" v-if ="showSwiper">
       <li class='recommendation-item-wrapper' v-for='(item, index) of recommendList' :key="item.id">
         <div class='recommendation-item'>
           <img class='recommendation-item-image' :src='item.imgUrl'/>
@@ -24,6 +24,11 @@
     name: 'HomeRecommendation',
     props: {
       recommendList: Array
+    },
+    computed: {
+      showSwiper() {
+        return this.recommendList.length? true : false;
+      }
     }
   }
 </script>
