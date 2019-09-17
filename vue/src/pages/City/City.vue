@@ -29,11 +29,6 @@
           console.log(e)
         })
     },
-<<<<<<< HEAD
-
-    data() {
-      return {}
-=======
     data() {
       return {
         cities: [],
@@ -44,19 +39,14 @@
       getCities(res) {
         this.hotCities = res.data.data.hotCities;
         this.cities = res.data.data.cities;
-
       },
->>>>>>> origin/city-list
+
     }
   }
 </script>
 
-<<<<<<< HEAD
-<style lang="stylus" scoped>
 
-=======
 
 <style lang="stylus" scoped>
->>>>>>> origin/city-list
 
 </style>

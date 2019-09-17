@@ -8,11 +8,7 @@
       <input placeholder="请输入城市"/>
     </div>
     <router-link to="/city">
-<<<<<<< HEAD:vue/src/pages/home/components/Header.vue
-
-=======
->>>>>>> origin/city-list:vue/src/pages/Home/components/Header.vue
-      <div class="header-right">888
+      <div class="header-right">{{city}}
         <span class="iconfont">&#xe62d;</span>
       </div>
     </router-link>
@@ -24,14 +20,7 @@
     name: 'Header',
     props: {
       city: String
-    },
-<<<<<<< HEAD:vue/src/pages/home/components/Header.vue
-    methods: {
-
     }
-=======
-    methods: {}
->>>>>>> origin/city-list:vue/src/pages/Home/components/Header.vue
   }
 </script>
 
