@@ -24,31 +24,21 @@
       </div>
 
       <div class="list-area">
-        <div class="list-title border-topBottom">A</div>
-        <div class="item-list">
-          <div class="item-city-name border-bottom">阿拉</div>
-          <div class="item-city-name border-bottom">阿拉</div>
-          <div class="item-city-name border-bottom">阿拉</div>
-          <div class="item-city-name border-bottom">阿拉</div>
-          <div class="item-city-name border-bottom">阿拉</div>
-        </div>
-        <div class="list-title border-topBottom">B</div>
-        <div class="item-list">
-          <div class="item-city-name border-bottom">阿拉</div>
-          <div class="item-city-name border-bottom">阿拉</div>
-          <div class="item-city-name border-bottom">阿拉</div>
-          <div class="item-city-name border-bottom">阿拉</div>
-          <div class="item-city-name border-bottom">阿拉</div>
+        <div>
+
+          <div v-for="(item, key) of cities" :key='key'>
+
+            <div class="list-title border-topBottom">{{key}}</div>
+            <div class="item-list">
+              <div v-for="(innerItem, innerIndex) of cities[key]" :key="innerIndex">
+                <div class="item-city-name border-bottom">{{innerItem.name}}</div>
+              </div>
+            </div>
+          </div>
+
         </div>
 
-        <div class="list-title border-topBottom">C</div>
-        <div class="item-list">
-          <div class="item-city-name border-bottom">阿拉</div>
-          <div class="item-city-name border-bottom">阿拉</div>
-          <div class="item-city-name border-bottom">阿拉</div>
-          <div class="item-city-name border-bottom">阿拉</div>
-          <div class="item-city-name border-bottom">阿拉</div>
-        </div>
+
       </div>
     </div>
 
@@ -57,6 +47,7 @@
 
 <script>
   import Bscroll from 'better-scroll'
+
   export default {
     name: "list",
     props: [

@@ -3,7 +3,7 @@
     <city-header></city-header>
     <city-search-box></city-search-box>
     <city-list :cities = 'cities' :hotCities = 'hotCities'></city-list>
-    <city-alphabet></city-alphabet>
+    <city-alphabet :cities = 'cities'></city-alphabet>
   </div>
 </template>
 
@@ -31,7 +31,7 @@
     },
     data() {
       return {
-        cities: [],
+        cities: {},
         hotCities: []
       }
     },
