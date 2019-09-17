@@ -23,22 +23,13 @@
         </div>
       </div>
 
-      <div class="list-area">
-        <div>
-
-          <div v-for="(item, key) of cities" :key='key'>
-
-            <div class="list-title border-topBottom">{{key}}</div>
-            <div class="item-list">
-              <div v-for="(innerItem, innerIndex) of cities[key]" :key="innerIndex">
-                <div class="item-city-name border-bottom">{{innerItem.name}}</div>
-              </div>
-            </div>
+      <div class="list-area" v-for="(item, key) of cities" :key='key' :ref='key'>
+        <div class="list-title border-topBottom">{{key}}</div>
+        <div class="item-list">
+          <div v-for="(innerItem, innerIndex) of cities[key]" :key="innerIndex">
+            <div class="item-city-name border-bottom">{{innerItem.name}}</div>
           </div>
-
         </div>
-
-
       </div>
     </div>
 
@@ -47,16 +38,25 @@
 
 <script>
   import Bscroll from 'better-scroll'
-
   export default {
     name: "list",
     props: [
       'hotCities',
-      'cities'
+      'cities',
+      'letterClicked'
     ],
     mounted() {
-      // ref获取dom
-      this.scroll = new Bscroll(this.$refs.wrapper)
+      // 为了添加整屏的弹性滚动
+      this.scroll = new Bscroll(this.$refs.wrapper)  // ref获取dom
+    },
+
+    watch: {
+      letterClicked() {
+        if (this.letterClicked) {
+          const el = this.$refs[this.letterClicked][0]
+          this.scroll.scrollToElement(el)
+        }
+      }
     }
   }
 </script>
