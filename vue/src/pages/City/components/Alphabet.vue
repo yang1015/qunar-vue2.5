@@ -89,9 +89,7 @@
     display: flex
     flex-direction: column
     justify-content center
-    background lavender
     .al-item
       margin .06rem 0
       font-size .2rem
-
 </style>
