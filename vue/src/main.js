@@ -11,6 +11,9 @@ import fastclick from 'fastclick'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
 
+// 引入vuex状态仓库
+import store from './store'
+
 fastclick.attach(document.body)
 Vue.use(VueAwesomeSwiper)
 Vue.config.productionTip = false
@@ -19,6 +22,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   components: {
     App
   },

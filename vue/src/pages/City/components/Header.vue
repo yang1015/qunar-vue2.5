@@ -1,13 +1,19 @@
 <template>
   <div class="header">
-      国内城市
+    <span class="iconfont" @click="backToHome">&#xe624;</span>
+    <p>国内城市</p>
   </div>
 </template>
 
 <script>
-    export default {
-      name: "CityHeader"
+  export default {
+    name: "CityHeader",
+    methods: {
+      backToHome() {
+        this.$router.push('/')
+      }
     }
+  }
 </script>
 
 <style lang="stylus" scoped>
@@ -16,7 +22,11 @@
     background $bgColor
     height $headerHeight
     line-height $headerHeight
-    text-align center
     color #fff
+    .iconfont
+      float: left
+      padding-left: .2rem
+    p
+      text-align: center
 
 </style>

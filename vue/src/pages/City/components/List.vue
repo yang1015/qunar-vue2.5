@@ -6,7 +6,8 @@
 
         <div class="button-list">
           <div class="button-wrapper">
-            <div class="button">北京</div>
+            <!--<div class="button">{{this.$store.state.city}}</div>-->
+            <div class="button">{{currentCity}}</div>
           </div>
         </div>
       </div>
@@ -15,7 +16,7 @@
         <div class="list-title border-topBottom">热门城市</div>
 
         <div class="button-list">
-          <div v-for="(item, index) of hotCities" :key="item.id">
+          <div v-for="(item, index) of hotCities" :key="item.id" @click="chooseCity(item)">
             <div class="button-wrapper">
               <div class="button">{{item.name}}</div>
             </div>
@@ -26,7 +27,7 @@
       <div class="list-area" v-for="(item, key) of cities" :key='key' :ref='key'>
         <div class="list-title border-topBottom">{{key}}</div>
         <div class="item-list">
-          <div v-for="(innerItem, innerIndex) of cities[key]" :key="innerIndex">
+          <div v-for="(innerItem, innerIndex) of cities[key]" :key="innerIndex" @click="chooseCity(innerItem)">
             <div class="item-city-name border-bottom">{{innerItem.name}}</div>
           </div>
         </div>
@@ -38,6 +39,7 @@
 
 <script>
   import Bscroll from 'better-scroll'
+  import { mapState, mapMutations } from 'vuex'
   export default {
     name: "list",
     props: [
@@ -45,6 +47,13 @@
       'cities',
       'letterClicked'
     ],
+    computed: {
+//      ...mapState(['city'])
+//      如果要重命名
+      ...mapState({
+        currentCity: 'city'
+      })
+    },
     mounted() {
       // 为了添加整屏的弹性滚动
       this.scroll = new Bscroll(this.$refs.wrapper)  // ref获取dom
@@ -57,6 +66,17 @@
           this.scroll.scrollToElement(el)
         }
       }
+    },
+
+    methods: {
+      chooseCity(item) {
+        // this.$store.dispatch('changeCity', item.name) // 先dispatch再commit
+        //  this.$store.commit('changeCity', item.name) // 直接commit
+        this.changeCity(item.name)
+        this.$router.push('/')
+      },
+
+      ...mapMutations(['changeCity'])
     }
   }
 </script>

@@ -8,7 +8,8 @@
       <input placeholder="请输入城市"/>
     </div>
     <router-link to="/city">
-      <div class="header-right">{{city}}
+      <!--<div class="header-right">{{this.$store.state.city}}-->
+      <div class="header-right">{{doubleCity}}
         <span class="iconfont">&#xe62d;</span>
       </div>
     </router-link>
@@ -16,10 +17,12 @@
 </template>
 
 <script>
+  import { mapState, mapGetters } from 'vuex'
   export default {
     name: 'Header',
-    props: {
-      city: String
+    computed: {
+      ...mapState(['city']),
+      ...mapGetters(['doubleCity'])
     }
   }
 </script>
@@ -53,7 +56,7 @@
         position absolute
         z-index 10
     .header-right
-      width: 1.24rem
+      min-width: 1.04rem
       float: right
       color #fff
 </style>

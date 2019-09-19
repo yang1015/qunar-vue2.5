@@ -7,6 +7,7 @@
     <div class="associative-words-list" ref="wrapper" v-show="showAssociativeWords">
       <ul>
         <li v-for="(item, index) of associativeWords" :key="index"
+            @click = "chooseCity(item)"
             class="associative-word border-bottom">
           {{item.name}}
         </li>
@@ -77,7 +78,13 @@
         }, 20)
       }
     },
-    methods: {}
+    methods: {
+      chooseCity(item) {
+//        this.$store.dispatch('changeCity', item.name)
+        this.$store.commit('changeCity', item.name)
+        this.$router.push('/')
+      }
+    }
   }
 </script>
 
