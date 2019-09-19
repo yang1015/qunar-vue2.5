@@ -4,7 +4,6 @@ import state from './state'
 import mutations from './mutations'
 Vue.use(Vuex)
 
-
 // 创建仓库
 export default new Vuex.Store({
   state,
@@ -15,8 +14,6 @@ export default new Vuex.Store({
     }
   }
 })
-
-
 // actions: {
 //   changeCity(ctx, city) {
 //     console.log(city);

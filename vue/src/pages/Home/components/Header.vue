@@ -9,7 +9,7 @@
     </div>
     <router-link to="/city">
       <!--<div class="header-right">{{this.$store.state.city}}-->
-      <div class="header-right">{{doubleCity}}
+      <div class="header-right">{{currentCity}}
         <span class="iconfont">&#xe62d;</span>
       </div>
     </router-link>
@@ -21,7 +21,9 @@
   export default {
     name: 'Header',
     computed: {
-      ...mapState(['city']),
+      ...mapState({
+        'currentCity': 'city' // 重命名
+      }),
       ...mapGetters(['doubleCity'])
     }
   }
