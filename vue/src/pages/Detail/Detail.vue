@@ -1,16 +1,19 @@
 <template>
-  <div>
+  <div class="detail-page-wrapper">
     <detail-banner :bannerData="bannerData"></detail-banner>
+    <fade-in-header :sightName="bannerData.sightName"></fade-in-header>
   </div>
 </template>
 
 <script>
   import axios from 'axios'
   import DetailBanner from './components/DetailBanner.vue'
+  import FadeInHeader from './components/FadeInHeader.vue'
 
   export default {
     components: {
-      DetailBanner
+      DetailBanner,
+      FadeInHeader
     },
 
     data() {
@@ -56,6 +59,6 @@
 </script>
 
 <style lang="stylus" scoped>
-
-
+  .detail-page-wrapper
+    height: 50rem
 </style>

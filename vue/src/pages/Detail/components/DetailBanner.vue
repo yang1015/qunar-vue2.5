@@ -1,19 +1,13 @@
 <template>
   <div>
-    <div v-show="!showGallery"
-         class="banner-wrapper" @click="toggleShowGallery">
-
+    <div v-show="!showGallery" class="banner-wrapper" @click="toggleShowGallery">
       <img class='banner-img' :src="bannerData.bannerImg"/>
       <div class="banner-desc">
         <p>{{bannerData.sightName}}</p>
         <span class="iconfont">&#xe624;</span>
       </div>
     </div>
-
-    <full-screen-gallery v-show="showGallery"
-                         @handleClickGallery = "toggleGallery"
-                         :galleryImgs="bannerData.galleryImgs">
-    </full-screen-gallery>
+    <full-screen-gallery v-show="showGallery" @handleClickGallery = "toggleGallery" :galleryImgs="bannerData.galleryImgs"></full-screen-gallery>
   </div>
 </template>
 
