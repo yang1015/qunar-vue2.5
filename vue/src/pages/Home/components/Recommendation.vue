@@ -1,8 +1,12 @@
 <template>
   <div>
     <div class='recommendation-title'>热销推荐</div>
-    <ul class="recommendation-list" v-if ="showSwiper">
-      <li class='recommendation-item-wrapper' v-for='(item, index) of recommendList' :key="item.id">
+    <ul class="recommendation-list" v-if="showSwiper">
+      <router-link tag="li"
+                   class='recommendation-item-wrapper'
+                   v-for='(item, index) of recommendList'
+                   :key="item.id"
+                   :to="'/detail/' + item.id">
         <div class='recommendation-item'>
           <img class='recommendation-item-image' :src='item.imgUrl'/>
           <div class="recommendation-item-content">
@@ -13,9 +17,8 @@
           </div>
         </div>
         <div v-if='item.id !== recommendList.length - 1' class='gray-border'/>
-      </li>
+      </router-link>
     </ul>
-
   </div>
 </template>
 
@@ -27,7 +30,7 @@
     },
     computed: {
       showSwiper() {
-        return this.recommendList.length? true : false;
+        return this.recommendList.length ? true : false;
       }
     }
   }

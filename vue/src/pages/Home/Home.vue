@@ -45,7 +45,6 @@
     },
 
     mounted() {
-      console.log("mounted")
       this.lastCity = this.currentCity;
       this.getHomeInfo();
     },
