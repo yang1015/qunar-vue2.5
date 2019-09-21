@@ -26,6 +26,10 @@
       window.addEventListener("scroll", this.onScroll);
     },
 
+    deactivated() {
+      window.removeEventListener("scroll", this.onScroll);
+    },
+
     methods: {
       onScroll() {
           const scrollTop = document.documentElement.scrollTop
@@ -61,5 +65,4 @@
       padding-left: .3rem
     .fadein-style
       background: $bgColor
-
 </style>
