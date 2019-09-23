@@ -8,7 +8,7 @@
       <input placeholder="请输入城市"/>
     </div>
     <router-link to="/city">
-      <div class="header-right">88
+      <div class="header-right">{{city}}
         <span class="iconfont">&#xe62d;</span>
       </div>
     </router-link>
