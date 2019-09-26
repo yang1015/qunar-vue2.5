@@ -58,6 +58,7 @@
         position absolute
         z-index 10
     .header-right
+      padding-left: .2rem
       min-width: 1.04rem
       float: right
       color #fff
