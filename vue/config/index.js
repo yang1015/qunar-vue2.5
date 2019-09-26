@@ -13,8 +13,7 @@ module.exports = {
       // 转发机制
       '/api': {
         target: 'http://localhost:8081',
-        // 开发环境的转发
-        pathRewrite: {
+        pathRewrite: { // 开发环境的转发
           '^/api': '/static/mock'
         }
       }
